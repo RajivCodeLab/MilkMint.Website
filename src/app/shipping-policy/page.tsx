@@ -6,7 +6,8 @@ export default function ShippingPolicyPage() {
     <>
       <Header />
       <div className="min-h-screen py-12 bg-background">
-        <div className="max-w-2xl mx-auto px-6 bg-white/80 rounded-2xl shadow-md py-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-white/80 p-8 md:p-10 rounded-2xl shadow-md">
           <h1 className="text-3xl font-heading mb-4">Shipping Policy – MilkMint</h1>
           <ul className="list-disc pl-6 space-y-2 text-gray-700">
             <li>MilkMint is a digital platform that connects users with milk vendors.</li>
@@ -17,6 +18,7 @@ export default function ShippingPolicyPage() {
           </ul>
           <div className="mt-6 p-4 bg-accent/10 border-l-4 border-accent rounded">
             <span className="font-semibold text-accent">Disclaimer:</span> MilkMint is not liable for vendor delivery failures.
+          </div>
           </div>
         </div>
       </div>

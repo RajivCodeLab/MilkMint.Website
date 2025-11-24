@@ -8,22 +8,36 @@ import Footer from '../components/Footer'
 
 const plans = [
   {
-    id: 'basic',
-    title: 'Basic',
-    price: '$5/wk',
-    bullets: ['2 bottles per delivery', 'Free delivery', 'Pause anytime']
+    id: 'pro',
+    name: 'Pro',
+    price: {
+      monthly: '₹99/month',
+      yearly: '₹999/year',
+      save: 'Save 2 months'
+    },
+    features: [
+      'Daily Milk Tracking',
+      'Smart Subscription Insights',
+      'Wallet Support',
+      'Delivery Updates',
+    ],
+    highlight: false
   },
   {
-    id: 'standard',
-    title: 'Standard',
-    price: '$12/wk',
-    bullets: ['6 bottles per delivery', 'Priority scheduling', 'Discounted add-ons']
-  },
-  {
-    id: 'plus',
-    title: 'Plus',
-    price: 'Vendor-dependent',
-    bullets: ['Custom bundles', 'Vendor-selected pricing', 'Premium support']
+    id: 'elite',
+    name: 'Elite',
+    price: {
+      monthly: '₹149/month',
+      yearly: '₹1499/year',
+      save: 'Save 2 months'
+    },
+    features: [
+      'All Pro features',
+      'Priority Vendor Support',
+      'Advanced Usage Analytics',
+      'Early Access to New Features',
+    ],
+    highlight: true
   }
 ]
 
@@ -41,36 +55,42 @@ export default function PlansPage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen py-16">
+      <div className="min-h-screen py-16 bg-background">
         <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-white/80 p-8 md:p-10 rounded-2xl shadow-md">
           <header className="mb-8">
             <h1 className="text-3xl font-heading">Subscription Plans</h1>
             <p className="mt-2 text-gray-700">Choose the plan that fits your household. Change or pause anytime.</p>
           </header>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={container} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={container} className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {plans.map((p) => (
-              <motion.div key={p.id} variants={card} whileHover={{ scale: 1.03 }} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transform transition-transform">
-                <div className="flex items-center justify-between">
-                  <h2 className="font-semibold text-lg">{p.title}</h2>
-                  <div className="text-sm text-gray-500">{p.price}</div>
+              <motion.div key={p.id} variants={card} whileHover={{ scale: 1.04 }} className={`bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transform transition-transform flex flex-col border ${p.highlight ? 'border-primary' : 'border-transparent'}`}>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h2 className="text-xl font-bold text-darktext">{p.name}</h2>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg font-semibold text-primary">{p.price.monthly}</div>
+                    <div className="text-base font-semibold text-accent">{p.price.yearly}</div>
+                    <div className="text-xs text-green-700 font-medium">{p.price.save}</div>
+                  </div>
                 </div>
 
-                <ul className="mt-4 space-y-2 text-sm text-gray-600">
-                  {p.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2">
-                      <span className="mt-1 text-primary">•</span>
-                      <span>{b}</span>
+                <ul className="mt-6 mb-6 space-y-2 text-sm text-gray-700">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2">
+                      <span className="text-primary">•</span>
+                      <span>{f}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-6">
-                  <Button onClick={() => (window.location.href = '/download')}>Download App</Button>
-                </div>
+                <Button onClick={() => (window.location.href = '/download')} className="mt-auto w-full">Download App</Button>
               </motion.div>
             ))}
           </motion.div>
+          </div>
         </div>
       </div>
       <Footer />

@@ -6,7 +6,8 @@ export default function RefundPolicyPage() {
     <>
       <Header />
       <div className="min-h-screen py-12 bg-background">
-        <div className="max-w-2xl mx-auto px-6 bg-white/80 rounded-2xl shadow-md py-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-white/80 p-8 md:p-10 rounded-2xl shadow-md">
           <h1 className="text-3xl font-heading mb-6">Cancellation and Refund Policy – MilkMint</h1>
 
           <section className="mb-6">
@@ -33,6 +34,7 @@ export default function RefundPolicyPage() {
             <h2 className="text-xl font-semibold mb-2">5. Contact for Refunds</h2>
             <p>For refund requests or questions, please contact <a href="mailto:support@milkmint.app" className="text-primary underline">support@milkmint.app</a>.</p>
           </section>
+          </div>
         </div>
       </div>
       <Footer />

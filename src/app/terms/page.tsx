@@ -6,7 +6,8 @@ export default function TermsPage() {
     <>
       <Header />
       <div className="min-h-screen py-12 bg-background">
-        <div className="max-w-2xl mx-auto px-6 bg-white/80 rounded-2xl shadow-md py-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-white/80 p-8 md:p-10 rounded-2xl shadow-md">
           <h1 className="text-3xl font-heading mb-6">Terms and Conditions – MilkMint</h1>
 
           <section className="mb-6">
@@ -63,6 +64,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-semibold mb-2">11. Contact information</h2>
             <p>For questions or support, contact us at <a href="mailto:support@milkmint.app" className="text-primary underline">support@milkmint.app</a>.</p>
           </section>
+          </div>
         </div>
       </div>
       <Footer />

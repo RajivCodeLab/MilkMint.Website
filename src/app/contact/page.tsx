@@ -11,7 +11,8 @@ export default function ContactPage() {
     <>
       <Header />
       <div className="min-h-screen py-12 bg-background">
-        <div className="max-w-2xl mx-auto px-6 bg-white/80 rounded-2xl shadow-md py-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-white/80 p-8 md:p-10 rounded-2xl shadow-md">
           <h1 className="text-3xl font-heading mb-2">Contact Us</h1>
           <p className="mb-6 text-gray-700">Users can reach MilkMint support for delivery, subscription, or payment issues.</p>
 
@@ -59,6 +60,7 @@ export default function ContactPage() {
               Send Message
             </button>
           </form>
+          </div>
         </div>
       </div>
       <Footer />
