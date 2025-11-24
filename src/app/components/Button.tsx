@@ -1,9 +1,10 @@
 "use client"
 
-import { motion } from 'framer-motion'
+
+import { motion, HTMLMotionProps } from 'framer-motion'
 import React from 'react'
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type Props = HTMLMotionProps<'button'> & {
   children: React.ReactNode
 }
 
