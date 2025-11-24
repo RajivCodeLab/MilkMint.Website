@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --mint: #2FBFA4;
+  --accent: #1D7F6B;
+  --bg: #E6F7F4;
+  --dark: #0F2E2A;
+}
+
+html,body,#root{
+  height:100%;
+}
+
+body{
+  background-color:var(--bg);
+}
+
+.rounded-2xl{border-radius:1rem}
+
+/* Soft fade-in for sections */
+.fade-in{opacity:0;transform:translateY(10px);transition:opacity .6s ease, transform .6s ease}
+.fade-in.is-visible{opacity:1;transform:translateY(0)}
+
+/* Hero gradient */
+.hero-bg{
+  background: linear-gradient(135deg, rgba(47,191,164,0.15), rgba(29,127,107,0.06));
+}
+
+/* Decorative blobs */
+.blob{
+  position:absolute;
+  filter:blur(30px);
+  opacity:.7;
+}
+
+.blob-1{width:320px;height:320px;background:radial-gradient(circle at 30% 30%, rgba(47,191,164,0.9), rgba(29,127,107,0.2));border-radius:50%}
+.blob-2{width:220px;height:220px;background:radial-gradient(circle at 70% 70%, rgba(29,127,107,0.9), rgba(47,191,164,0.1));border-radius:50%}
+
+/* Button hover scale */
+.btn-scale{transition:transform .18s ease}
+.btn-scale:hover{transform:scale(1.04)}
