@@ -64,12 +64,12 @@ export default function EarlyAccessPage() {
               Join via WhatsApp
             </a>
             
-            <p className="text-sm text-gray-600">
+            {/* <p className="text-sm text-gray-600">
               Or call us at{' '}
               <a href="tel:+917899301122" className="text-primary hover:underline font-medium">
                 +91 7899301122
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

@@ -1,12 +1,30 @@
 "use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import { fadeInUp, float } from '../utils/animations'
 
+// List all your screenshots here - they will auto-rotate
+const screenshots = [
+  '/Screenshots/1.png',
+  '/Screenshots/2.png',
+  '/Screenshots/3.png',
+  '/Screenshots/4.png',
+  '/Screenshots/5.png'
+]
+
 export default function Hero(){
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % screenshots.length)
+    }, 3500) // Change image every 3.5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#E6F7F4] via-[#D1F5D3]/30 to-[#E6F7F4] min-h-screen flex items-center">
       <div className="absolute inset-x-0 top-6 z-30">
@@ -67,14 +85,41 @@ export default function Hero(){
             transition={{duration:0.8, delay:0.2}}
             className="relative"
           >
-            {/* Glass morphism card */}
+            {/* Glass morphism card with carousel */}
             <div className="relative bg-white/40 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-white/50">
-              <div className="bg-white/90 rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-500">
-                <img 
-                  src="/Screenshots/3.png" 
-                  alt="MilkMint App Dashboard" 
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
+              <div className="bg-white/90 rounded-2xl shadow-xl p-6 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.img 
+                    key={currentIndex}
+                    src={screenshots[currentIndex]} 
+                    alt={`MilkMint App Screenshot ${currentIndex + 1}`}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full h-auto rounded-xl shadow-lg"
+                    onError={(e) => {
+                      // Fallback to first screenshot if image fails to load
+                      if (e.currentTarget.src !== screenshots[0]) {
+                        e.currentTarget.src = screenshots[0]
+                      }
+                    }}
+                  />
+                </AnimatePresence>
+                
+                {/* Carousel indicators */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {screenshots.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        idx === currentIndex ? 'bg-primary w-8' : 'bg-gray-300 hover:bg-gray-400'
+                      }`}
+                      aria-label={`Go to screenshot ${idx + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
             

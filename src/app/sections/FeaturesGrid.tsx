@@ -22,38 +22,50 @@ export default function FeaturesGrid(){
         {features.map((f, idx) => (
           <motion.div key={f.title} initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45, delay: idx*0.08}} className="bg-white/70 p-6 md:p-8 rounded-2xl shadow hover:shadow-md min-h-[160px]">
             <div className="flex items-start gap-4">
-              <div className="h-12 w-12 rounded-full bg-accent/90 mb-0 flex items-center justify-center flex-shrink-0">
-                {/** Inline SVG icons matching each feature */}
-                {f.title.includes('Subscription') && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 7h18" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <rect x="3" y="11" width="18" height="10" rx="2" stroke="#ffffff" strokeWidth="2" />
-                    <path d="M8 15h.01" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M12 15h.01" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M16 15h.01" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <div className="h-12 w-12 rounded-full bg-primary mb-0 flex items-center justify-center flex-shrink-0">
+                {f.title.includes('Track Daily') && (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="#ffffff" strokeWidth="2"/>
+                    <path d="M12 6v6l4 2" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 )}
 
-                {f.title.includes('Vendor') && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 15a2 2 0 0 1-2 2H9l-4 3V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10z" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M7 8h10M7 12h6" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                {f.title.includes('Auto-Generate') && (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="16" rx="2" stroke="#ffffff" strokeWidth="2"/>
+                    <path d="M7 8h10M7 12h10M7 16h6" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 )}
 
-                {f.title.includes('Secure') && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2l7 4v6c0 5-3.58 9.74-7 11-3.42-1.26-7-6-7-11V6l7-4z" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M9.5 12.5l1.75 1.75L15 10" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                {f.title.includes('PDF') && (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#ffffff" strokeWidth="2"/>
+                    <path d="M14 2v6h6M10 13h4M10 17h4" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 )}
 
-                {f.title.includes('Delivery') && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 7h13v10H3z" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M16 11h3l2 2v4" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="7.5" cy="18.5" r="1.5" fill="#ffffff"/>
-                    <circle cx="18.5" cy="18.5" r="1.5" fill="#ffffff"/>
+                {f.title.includes('Payment History') && (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="5" width="20" height="14" rx="2" stroke="#ffffff" strokeWidth="2"/>
+                    <path d="M2 10h20" stroke="#ffffff" strokeWidth="2"/>
+                    <circle cx="7" cy="15" r="1" fill="#ffffff"/>
+                  </svg>
+                )}
+
+                {f.title.includes('Customer Management') && (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="7" r="4" stroke="#ffffff" strokeWidth="2"/>
+                    <path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M16 11h5M18.5 8.5v5" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )}
+
+                {f.title.includes('Delivery History') && (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="7" height="7" rx="1" stroke="#ffffff" strokeWidth="2"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1" stroke="#ffffff" strokeWidth="2"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1" stroke="#ffffff" strokeWidth="2"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1" stroke="#ffffff" strokeWidth="2"/>
                   </svg>
                 )}
               </div>
