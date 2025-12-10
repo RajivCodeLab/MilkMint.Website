@@ -1,8 +1,8 @@
 import './styles/globals.css'
 
 export const metadata = {
-  title: 'MilkMint',
-  description: 'MilkMint — simple subscription for fresh milk'
+  title: 'MilkMint - Smart Milk Delivery & Billing App for Vendors',
+  description: 'Track deliveries, auto-generate bills, and manage customers with MilkMint. Built for milk vendors, dairies, and societies. Join early access today!'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

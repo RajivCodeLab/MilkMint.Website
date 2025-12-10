@@ -5,17 +5,20 @@ import { motion } from 'framer-motion'
 import { fadeInUp } from '../utils/animations'
 
 const features = [
-  { title: 'Subscription Management', desc: 'Create, pause or cancel subscriptions with a few taps.' },
-  { title: 'Vendor Communication', desc: 'Chat and coordinate directly with your local milk vendor.' },
-  { title: 'Secure Payments', desc: 'Safe, reliable payment handling and receipts for every order.' },
-  { title: 'Delivery Tracking', desc: 'See upcoming deliveries, history and payment status in one place.' }
+  { title: 'Track Daily Deliveries', desc: 'Mark deliveries in seconds. No more paper registers or mistakes.' },
+  { title: 'Auto-Generate Monthly Bills', desc: 'Bills are created automatically based on daily entries. Zero manual work.' },
+  { title: 'PDF Invoices', desc: 'Professional PDF bills ready to share with customers instantly.' },
+  { title: 'Payment History', desc: 'Track who paid, when, and how much. Complete payment records.' },
+  { title: 'Customer Management', desc: 'Store customer details, addresses, and subscription preferences in one place.' },
+  { title: 'Delivery History', desc: 'View complete delivery records. Resolve disputes with data.' }
 ]
 
 export default function FeaturesGrid(){
   return (
     <section className="py-20">
-      <h2 className="text-2xl font-heading mb-8">Features</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
+      <h2 className="text-2xl md:text-3xl font-heading mb-4 text-center">The MilkMint Solution</h2>
+      <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Everything you need to run your milk business professionally</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {features.map((f, idx) => (
           <motion.div key={f.title} initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45, delay: idx*0.08}} className="bg-white/70 p-6 md:p-8 rounded-2xl shadow hover:shadow-md min-h-[160px]">
             <div className="flex items-start gap-4">

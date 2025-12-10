@@ -14,11 +14,11 @@ export default function Hero(){
       </div>
       <div className="max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-8">
         <div className="w-full md:w-1/2">
-          <motion.h1 initial="hidden" whileInView="visible" viewport={{ once:true }} variants={fadeInUp} className="text-3xl md:text-5xl font-heading mb-6">Manage Your Daily Milk Deliveries Effortlessly</motion.h1>
-          <motion.p initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:0.6}} className="text-lg mb-6">Track deliveries, manage subscriptions, and stay connected with your local milk vendor — all in one app.</motion.p>
-          <motion.div initial={{opacity:0, y:8}} whileInView={{opacity:1,y:0}} transition={{duration:0.6}} className="flex gap-4">
-            <Button onClick={()=>{window.location.href='/download'}}>Download App</Button>
-            <Button onClick={()=>{window.location.href='/plans'}} >View Plans</Button>
+          <motion.h1 initial="hidden" whileInView="visible" viewport={{ once:true }} variants={fadeInUp} className="text-3xl md:text-5xl font-heading mb-6">Smart Milk Delivery & Billing App for Milk Vendors & Societies</motion.h1>
+          <motion.p initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:0.6}} className="text-lg mb-6">No more registers. No more delivery mistakes. No more billing confusion.</motion.p>
+          <motion.div initial={{opacity:0, y:8}} whileInView={{opacity:1,y:0}} transition={{duration:0.6}} className="flex flex-col sm:flex-row gap-4">
+            <Button onClick={()=>{window.location.href='/early-access'}}>Join Early Access</Button>
+            <Button onClick={()=>{window.open('https://wa.me/917899301122', '_blank')}} >WhatsApp Us</Button>
           </motion.div>
         </div>
 
